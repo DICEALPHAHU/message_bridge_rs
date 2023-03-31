@@ -1,4 +1,5 @@
 {
+  "printQR": true,
   "qqConfig": {
     "botId": # 机器人账号 #,
     "password": # 机器人登录密码 16位MD5 #,
