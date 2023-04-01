@@ -43,6 +43,7 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
 5\. 配置文件: cp config.simple.json config.json 配置说明: CONFIG.md
 
 命令
+```
 
 \> git clone https://github.com/rabbitkiller-dev/message_bridge_rs
 
@@ -55,6 +56,7 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
 \> pm2 start server.js --name bridge_js
 
 \> pm2 start "cargo run" --name bridge_js
+```
 
 对于完全一清二白的小白程序员，请认真读完以下内容，否则出现部署失败
 
@@ -73,8 +75,10 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
     ![](media/e36396d91771927587e25b307dea275e.png)
 
     输入
+    ```
 
     Git clone <https://github.com/rabbitkiller-dev/message_bridge_rs.git>
+    ```
 
     这样你会在这个文件夹得到一个新的子文件夹
 
@@ -108,7 +112,10 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
 
     ![](media/16e9dd3945fa203524a9e8c753ce98e3.png)
 
-    输入 npm install -g pm2
+    输入
+    ```
+    npm install -g pm2
+    ```
 
     ![](media/a22c315982f3bd165194457041d4c205.png)
 
@@ -135,8 +142,9 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
     出现如上所示便完成安装了
 
     现在打开之前预留在后台的命令框，输入
-
+    ```
     rustup default nightly
+    ```
 
     检查是否安装成功，出现这个框说明是正常的
 
@@ -171,8 +179,9 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
     ![](media/0cd9ef15d4e3848ffc07e38cdc2fcf0c.png)
 
     复制如下的网址
-
+    ```
     https://discord.com/oauth2/authorize?client_id=client_id&scope=bot&permissions=permissions
+    ```
 
     修改一下连接的client_id和permissions参数：
 
@@ -205,7 +214,7 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
     ![](media/96d2331d5dad926f6510d9f0cb4e30fb.png)
 
     QQ方面
-
+    ```
     BotID：你需要作为机器人的QQ账号
 
     Password：QQ密码
@@ -213,26 +222,29 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
     Version：上图任意选一个就行
 
     Auth：两者选其一，QR（二维码）会更快一点
-
+    ```
+    ```
     Discord方面
 
     BotID：将之前保存下来的机器人ID复制到这个位置
 
     Token：将之前生成的机器人Token复制到这个位置
+    ```
 
     Bridge方面
 
     Discord项目：
-
+    ```
     Id：将之前浏览器复制Webhook的id放到这个位置
 
     Token：将之前浏览器复制Webhook的Token放到这个位置
 
     ChannelID：将之前浏览器复制Webhook的Channelid放到这个位置
-
+    ```
     QQ项目：
-
+    ```
     QQGroup：把你需要消息互通的QQ群的群号放到这个位置（这个QQ群必须有你的机器人）
+    ```
 
     以下为示例
 
@@ -245,27 +257,27 @@ QQ群：https://jq.qq.com/?_wv=1027&k=D8ymzW7M
 程序根目录打开命令
 
 输入命令
-
+```
 npm install
-
+```
 完成后输入
-
+```
 npm run build
-
+```
 ![](media/6d90d070d5a845e1bcfe8f9a77ba993f.png)
 
 得到这个界面后便完成了程序初步安装
 
 开始架设交互桥，输入命令
-
+```
 pm2 start server.js --name bridge_js
-
+```
 ![](media/c70dd0eca9d376776d6396a3e29e44a8.png)
 
 得到这个界面，现在输入
-
+```
 Cargo run
-
+```
 开始交流沟通
 
 ![](media/803d1deb76053e8ba08640697117126a.png)
@@ -279,29 +291,29 @@ Cargo run
 之后每次重新启动软件，输入cargo run即可
 
 重启电脑后，需要输入
-
+```
 \> npm run build
 
 \> pm2 start server.js --name bridge_js
 
 然后再cargo run即可
-
-1.  常见问题
-2.  输入cargo run后提示未链接到主机，或者积极拒绝链接等？
+```
+## 常见问题
+1.  输入cargo run后提示未链接到主机，或者积极拒绝链接等？
 
     答：最好换一个科学上网的软件
 
-3.  输入cargo run后，启动程序，提示
+2.  输入cargo run后，启动程序，提示
 
     run:recv_event:handle_event:handle+gateway+closed然后自动退出Discord？
 
     答：这种情况十有八九是Discord机器人配置出问题了，重新配置Discord机器人然后重写config.json
 
-4.  程序启动后，一直提示“由于连接方…尝试连接失败”？
+3.  程序启动后，一直提示“由于连接方…尝试连接失败”？
 
     答：同 问题2
 
-5.  Nodejs提示端口被占用？
+4.  Nodejs提示端口被占用？
 
     答：直接随便在某处打开命令，然后输入
 
@@ -316,9 +328,9 @@ Cargo run
     之后查看哪个软件占用了这个端口，在任务管理器关闭这个软件就行了
 
     最后按照默认步骤
-
+```
     \> npm run build
 
     \> pm2 start server.js --name bridge_js
-
+```
     然后再cargo run即可
